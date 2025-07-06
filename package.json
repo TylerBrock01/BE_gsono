@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "dev2": "nodemon --exec ts-node src/index.ts",
+    "build": "tsc"
   },
   "dependencies": {
     "express": "5.0.0"
