@@ -6,6 +6,6 @@ router.get('/', (req, res) => {
 })
 router.post('/auth/register', (req, res) => {
     console.log('register',req.body);
-    res.send('register successful: '+ req.body.name);
+    res.send('register successful: '+ req.body);
 })
 export default router;
