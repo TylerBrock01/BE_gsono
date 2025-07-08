@@ -1,11 +1,6 @@
-import express from 'express'; //esm
-const app = express();
+import server from "./server";
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, ()=>{
+server.listen(PORT, ()=>{
     console.log('listening on port: ', PORT);
 });
-
-app.get('/', (req, res) => {
-    res.send('Hello World');
-})
