@@ -4,8 +4,8 @@ const router = Router()
 router.get('/', (req, res) => {
     res.send('Hello World');
 })
-router.get('/login', (req, res) => {
-    console.log('login');
-    res.send('Hello World');
+router.post('/auth/register', (req, res) => {
+    console.log('register',req.body);
+    res.send('register successful: '+ req.body.name);
 })
 export default router;
