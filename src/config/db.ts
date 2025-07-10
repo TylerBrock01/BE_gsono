@@ -1,13 +1,11 @@
 import mongoose from 'mongoose';
-console.log(process.env.MONGUITO);
 
 export const connectDB = async () => {
     try{
-        const url = process.env.MONGUITO
-        const {connection} = await mongoose.connect(url)
-        const url2 = `${connection.host}:${connection.port}`
+        const {connection} = await mongoose.connect(process.env.MONGUITO)
+        const url = `${connection.host}:${connection.port}`
 
-        console.log(`Connected to DB: ${url2}`);
+        console.log(`connection established: ${url}`);
     }catch(e){
         // console.log(e);
         console.log(`Error connecting to DB: ${e.message}`);
