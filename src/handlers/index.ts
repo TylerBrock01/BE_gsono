@@ -2,9 +2,16 @@ import Bussines from "../models/Bussines";
 import { Request, Response } from "express";
 
  export const createBussiness = async (req:Request,res:Response) => {
-    console.log('register:\n',req.body);
-    const bussines = new Bussines(req.body);
+     const {name} = req.body;
+     const bussinesExist = await Bussines.findOne({name})
 
-    await bussines.save();
-    res.send('register successfully\n'+bussines.toString());
+     if(bussinesExist){
+         res.status(400).send('Bussines already exist')
+     }
+     else{
+         const bussines = new Bussines(req.body)
+         await bussines.save()
+         res.send('Bussines register successfully\n'+bussines.toString())
+     }
+
 };
