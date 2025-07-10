@@ -10,14 +10,16 @@ export interface IBussines {
 
 const bussinesSchema = new Schema({
     name: {
-        String,
-        required: true, trim: true, unique: true
+        type: String,
+        required: true,
+        trim: true,
+        unique: true
     },
-    logo: {String, required: true, trim: true, unique: true},
-    location: {String, required: true, trim: true},
+    logo: {type: String,required: true, trim: true, unique: true},
+    location: {type: String, required: true, trim: true},
     social: String,
     social0: String
 })
 
-const Bussines = mongoose.model<IBussines>('bussines', bussinesSchema);
+const Bussines = mongoose.model<IBussines>('Bussines', bussinesSchema);
 export default Bussines;
