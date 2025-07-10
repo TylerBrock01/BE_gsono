@@ -1,5 +1,13 @@
 import mongoose, {Schema} from 'mongoose';
 
+export interface IBussines {
+    name: string,
+    logo: string,
+    location: string,
+    social: string,
+    social0: string,
+}
+
 const bussinesSchema = new Schema({
     name: {
         String,
@@ -11,5 +19,5 @@ const bussinesSchema = new Schema({
     social0: String
 })
 
-const Bussines = mongoose.model('bussines', bussinesSchema);
+const Bussines = mongoose.model<IBussines>('bussines', bussinesSchema);
 export default Bussines;
