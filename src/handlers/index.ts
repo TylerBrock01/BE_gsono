@@ -1,6 +1,7 @@
 import Bussines from "../models/Bussines";
+import { Request, Response } from "express";
 
- export const createBussiness = async (req,res) => {
+ export const createBussiness = async (req:Request,res:Response) => {
     console.log('register:\n',req.body);
     const bussines = new Bussines(req.body);
 
