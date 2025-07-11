@@ -13,6 +13,6 @@ import { Request, Response } from "express";
          const bussines = new Bussines(req.body)
          await bussines.save()
          res.status(201).send('Bussines register successfully\n'+bussines.toString())
+         return console.log('closed')
      }
-    return console.log('no closed')
 };
