@@ -6,7 +6,7 @@ import { Request, Response } from "express";
      const bussinesExist = await Bussines.findOne({name})
 
      if(bussinesExist){
-         res.status(400).send('Bussines already exist')
+         res.status(409).send('Bussines already exist')
          return console.log('closed')
      }
      else{
