@@ -7,11 +7,12 @@ import { Request, Response } from "express";
 
      if(bussinesExist){
          res.status(400).send('Bussines already exist')
+         return console.log('closed')
      }
      else{
          const bussines = new Bussines(req.body)
          await bussines.save()
-         res.send('Bussines register successfully\n'+bussines.toString())
+         res.status(201).send('Bussines register successfully\n'+bussines.toString())
      }
-
+    return console.log('no closed')
 };
