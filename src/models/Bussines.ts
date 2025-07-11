@@ -10,7 +10,8 @@ export interface IBussines {
     price:{
         low: number,
         high: number,
-    }
+    },
+    chain : string
 }
 
 const bussinesSchema = new Schema({
@@ -28,6 +29,12 @@ const bussinesSchema = new Schema({
     price: {
         low: {type: Number, required: true, trim: true},
         high: {type: Number, required: true, trim: true},
+    },
+    chain:{
+        type: String,
+        trim: true,
+        required: true,
+
     }
 })
 
