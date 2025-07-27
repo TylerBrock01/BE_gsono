@@ -12,7 +12,7 @@ import { Request, Response } from "express";
      }
      else{
          const bussines = new Bussines(req.body)
-         await bussines.save()
+         // await bussines.save()
          res.status(201).send('bussines register successfully')
          return console.log('closed')
      }
