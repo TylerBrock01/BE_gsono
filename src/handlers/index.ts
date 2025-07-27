@@ -13,8 +13,7 @@ import { Request, Response } from "express";
      else{
          const bussines = new Bussines(req.body)
          await bussines.save()
-         const success = new Error('Bussines register successfully')
-         res.status(201).json({success: success.message})
+         res.status(201).send('bussines register successfully')
          return console.log('closed')
      }
 };
