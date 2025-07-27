@@ -6,13 +6,15 @@ import { Request, Response } from "express";
      const bussinesExist = await Bussines.findOne({name})
 
      if(bussinesExist){
-         res.status(409).send('Bussines already exist')
+         const error = new Error('Bussines already exist')
+         res.status(409).json({error: error.message})
          return console.log('closed')
      }
      else{
          const bussines = new Bussines(req.body)
          await bussines.save()
-         res.status(201).send('Bussines register successfully\n'+bussines.toString())
+         const success = new Error('Bussines register successfully')
+         res.status(201).json({success: success.message})
          return console.log('closed')
      }
 };
