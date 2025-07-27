@@ -3,7 +3,7 @@ export const corsconfig: CorsOptions = {
     origin: function(origin, callback){
         // callback(null, true)
         console.log(origin)
-        if(origin ==='http://localhost:5173'){
+        if(origin ===process.env.FRONTEND_BUSSINES){
             callback(null,true)
             console.log('Allowed by CORS')
             // return true;
