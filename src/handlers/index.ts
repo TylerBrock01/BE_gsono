@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 
  export const createBussiness = async (req:Request,res:Response) => {
      const {name} = req.body;
-     const bussinesExist = await Bussines.findOne({name})
+     const bussinesExist = await Bussines.find({name})
 
      if(bussinesExist){
          const error = new Error('Bussines already exist')
@@ -12,7 +12,7 @@ import { Request, Response } from "express";
      }
      else{
          const bussines = new Bussines(req.body)
-         // await bussines.save()
+         await bussines.save()
          res.status(201).send('bussines register successfully')
          return console.log('closed')
      }
