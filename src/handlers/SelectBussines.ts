@@ -1,7 +1,7 @@
 import Bussines from "../models/Bussines";
 import { Request, Response } from "express"
 
-export const showBussines = async (req:Request,res:Response) => {
+export const selectBussines = async (req:Request, res:Response) => {
     const {name} = req.body;
     const bussinesExist = await Bussines.findOne({name})
 

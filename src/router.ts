@@ -1,11 +1,11 @@
 import {Router} from 'express'
-import {createBussiness} from "./handlers";
-import {showBussines} from "./handlers/ShowBussines";
+import {createBussiness} from "./handlers/CreateBussines";
+import {selectBussines} from "./handlers/SelectBussines";
 
 const router = Router()
 
 router.post('/auth/registerbussines', createBussiness)
-router.get('/showbussines', showBussines)
+router.get('/showbussines', selectBussines)
 
 
 
