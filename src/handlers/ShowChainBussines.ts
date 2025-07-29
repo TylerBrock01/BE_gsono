@@ -7,7 +7,6 @@ export const showchainBussines = async (req:Request,res:Response) => {
 
     if(bussinesExist.length !== 0){
         console.log('exist!')
-        // const bussines = bussinesExist.map(doc => new Business(doc.toObject()));
         res.status(302).json(bussinesExist)
         return console.log('closed')
     }
