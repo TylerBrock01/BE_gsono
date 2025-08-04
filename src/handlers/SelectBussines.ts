@@ -2,12 +2,12 @@ import Bussines from "../models/Bussines";
 import { Request, Response } from "express"
 
 export const selectBussines = async (req:Request, res:Response) => {
-    const {name} = req.body;
+    const {name} = req.query;
     const bussinesExist = await Bussines.findOne({name})
 
     if(bussinesExist){
         const bussines = new Bussines(bussinesExist)
-        res.status(302).json(bussines)
+        res.status(200).json(bussines)
         return console.log('closed')
     }
     else{
