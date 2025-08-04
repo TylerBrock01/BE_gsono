@@ -1,15 +1,13 @@
 import { CorsOptions } from 'cors'
 export const corsconfig: CorsOptions = {
     origin: function(origin, callback){
-        if(origin ===process.env.FRONTEND_BUSSINES){
+        console.log(origin)
+        if(origin ===process.env.FRONTEND_BUSSINES || origin === undefined ){
             callback(null,true)
             console.log('Allowed by CORS')
         }else {
-            // callback(new Error('Not allowed by CORS'))
-            // console.log('Not allowed by CORS')
-            console.log('testcors')
-            callback(null,true)
-            return null
+            console.log('Not allowed by CORS')
+            return 'Not allowed by CORS'
         }
     }
 }
