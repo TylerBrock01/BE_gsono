@@ -6,7 +6,7 @@ import {showchainBussines} from "./handlers/ShowChainBussines";
 const router = Router()
 
 router.post('/auth/registerbussines', createBussiness)
-router.get('/showshop', selectBussines)
+router.get('/selectbussines', selectBussines)
 router.get('/showchainbussines', showchainBussines)
 
 
